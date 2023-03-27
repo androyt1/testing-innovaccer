@@ -68,7 +68,7 @@ const Home = () => {
   
  
   function validateName(value){
-    const regex=/^(?=.{3,25}$)[A-Za-z]+(?:['\s-][A-Za-z]+){0,2}$/
+    const regex=/^(?=.{3,30}$)[A-Z][a-z]{0,15}(?:[-' ][a-z]{1,15})?$/
     if(!value.match(regex)){       
         setUser({...user,name:value,nameError:true,nameCaption:'Name is Invalid'})
     }else{       
