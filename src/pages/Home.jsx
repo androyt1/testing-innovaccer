@@ -76,6 +76,8 @@ const Home = () => {
     }
   }
 
+  // project name regex /^[a-zA-Z]{1,30}$/
+
   function validateEmail(value){
     const regex=/^[^\s][^\s@]*@[^\s@]+\.[^\s@]+[^\s]$/
     if(!value.match(regex)){
