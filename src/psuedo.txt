@@ -1,0 +1,36 @@
+//create the state
+const [settings, setSettings] = useState([]);
+//Fetch the settings from the API and store them in the state variable when the component mounts:
+useEffect(() => {
+  fetchSettingsFromApi()
+    .then((settings) => setSettings(settings))
+    .catch((error) => console.error(error));
+}, []);
+//render the field from each setting
+return (
+  <div>
+    {settings.map((setting) => (
+      <input
+        key={setting.key}
+        type="text"
+        value={setting.value}
+        onChange={(event) => handleSettingChange(setting.key, event.target.value)}
+      />
+    ))}
+  </div>
+);
+Implement the handleSettingChange function:
+const handleSettingChange = (key, value) => {
+  updateSettingInApi(key, value)
+    .then((updatedSetting) => {
+      const updatedSettings = settings.map((setting) => {
+        if (setting.key === updatedSetting.key) {
+          return updatedSetting;
+        } else {
+          return setting;
+        }
+      });
+      setSettings(updatedSettings);
+    })
+    .catch((error) => console.error(error));
+};
