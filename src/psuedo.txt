@@ -34,3 +34,13 @@ const handleSettingChange = (key, value) => {
     })
     .catch((error) => console.error(error));
 };
+
+
+ // Update a setting value in the state when the user types into an input field
+  const handleSettingChange = (key, newValue) => {
+    setSettings((prevSettings) =>
+      prevSettings.map((setting) =>
+        setting.key === key ? { ...setting, value: newValue } : setting
+      )
+    );
+  };
