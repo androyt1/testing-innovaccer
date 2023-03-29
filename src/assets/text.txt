@@ -1,0 +1,26 @@
+
+Sign in to your Google Cloud account and navigate to the Connector Creator tool by clicking on this link: https://console.cloud.google.com/flows/enableapi?apiid=connectors.googleapis.com
+
+Click the "Create a connector" button and choose "Custom connector" from the list of options.
+
+Enter a name and description for your connector, and choose "REST" as the API type. Then click "Create".
+
+In the "Endpoints" section, click "Add endpoint" to create a new endpoint for your GCS write operation. Name the endpoint "Write to GCS", set the Path to "/write", and set the Method to "POST".
+
+In the "Request" section, add a field for the file you want to write to GCS. Click "Add field" and name the field "file". Choose the "file" type for the field.
+
+In the "Response" section, add any fields that you want to return to the UI after the successful write operation. For example, you could add a "success" field with a "boolean" type to indicate whether the write operation was successful.
+
+In the "Authentication" section, choose the authentication method you want to use to access your GCS bucket. You can choose from various methods, including OAuth2 and API key. Follow the prompts to authenticate your connector with your GCS account.
+
+In the "Test" section, test your connector by uploading a sample file and verifying that it's written to your GCS bucket. You can also test any additional fields you added to the response.
+
+In the "UI" section, use the drag-and-drop interface to create a UI for your connector. You can add form fields, buttons, and other UI elements to allow users to interact with your connector.
+
+Add a form field for the file you want to upload to GCS. Choose "file" as the field type and give it an appropriate label.
+
+Add a button that triggers the GCS write operation when clicked. Name the button something like "Upload file to GCS" and choose "Write to GCS" as the endpoint.
+
+Save your connector and UI by clicking "Deploy". You'll be prompted to select a project and region to deploy your connector to. Follow the prompts to deploy your connector.
+
+Once your connector is deployed, you can access the UI by clicking on the "Endpoint URL" link in the "Deployed Versions" section of the Connector Creator tool.
